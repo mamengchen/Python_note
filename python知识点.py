@@ -81,4 +81,14 @@ int、str、list(列表)、tuple(元组)、bool、float（典型的标识）
 定义：{}    例子：{key1:value1, key2:value2}
 是无序的,没有下标标识，用key标识value，字典中不能有两个key，原本的key中value会被新的key中value所替代
 value：类型str int float list set dict
-key：不是任意的类型，必须是不可变的类型例如int ，str
+key：不是任意的类型，必须是不可变的类型例如int ，str，元祖
+空字典可以用：{}定义
+
+如果把type当作变量，就不能当作数据判断的系统调用
+值类型与引用类型：
+int：值类型：一个改变不会引起另一个改变 （str，tuple）
+list：引用类型：一个改变另一个也跟着改变（set，dict）
+字符串str：a = 'hello'   a = a + 'python'  print(a)
+这里可以打印是因为这里是一个新的字符串可以同个id(a);看a的地址就是不相同的
+元祖不可以修改，但是元祖中如果有个可修改类型的，则可以修改可修改类型中的数据
+2**n：表示n次方;
