@@ -25,8 +25,8 @@ x0 = 3.14
 y0 = 2.413
 plt.scatter(x0, y0,s=75, color='k')
 plt.plot([x0, x0],[y0, 0], 'b--', lw=2.5)
-plt.annotate(r'$X = 3.14\  Y = %s$'%y0, xy=(x0,y0), xycoords='data', xytext=(+30,-30),textcoords='offset points', fontsize=16,arrowprops=dict(arrowstyle='->',connectionstyle='arc3, rad=.2'))
 
+plt.annotate(r'$X = 3.14\  Y = %s$'%y0, xy=(x0,y0), xycoords='data', xytext=(+30,-30),textcoords='offset points', fontsize=16,arrowprops=dict(arrowstyle='->',connectionstyle='arc3, rad=.2'))
 plt.text(1, -0.25, r'$This\ is\ the\ mid\ print.\ \mu\ \sigma_X\ \alpha_Y$',fontdict={'size':16, 'color':'g'})
 
 plt.figure()
@@ -34,6 +34,18 @@ data = loaddataSet('fileY.txt')
 y = [float(i) for i in data]
 data = loaddataSet('fileX.txt')
 x = [float(i) for i in data]
+x0 = 0
+y0 = 0
+plt.scatter(x0, y0, s=75, color='r')
+plt.annotate(r'$X = 0\  Y = %s$'%y0, xy=(x0,y0), xycoords='data', xytext=(+30,-30),textcoords='offset points', fontsize=16,arrowprops=dict(arrowstyle='->',connectionstyle='arc3, rad=.2'))
 plt.plot(x, y, 'go')
+
+ax = plt.gca()
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.xaxis.set_ticks_position('bottom')
+ax.spines['bottom'].set_position(('data', 0))
+ax.yaxis.set_ticks_position('left')
+ax.spines['left'].set_position(('data', 0))
 
 plt.show()
